@@ -18,11 +18,13 @@ describe ('BankAccount',() => {
         expect(accountNum.getBalance()).toBe(800);
     })
     it('deposit 1000, deposite 2000, withdraw 500 , it showsthe list of transcation',() =>{
+        jest.useFakeTimers();
+        jest.setSystemTime(new Date('2023-09-05'));
         const accountNum = new BankAccount('001234567');
         accountNum.deposit(1000);
         accountNum.deposit(2000);
         accountNum.withdraw(500);
-        const expectedStatement = `date || credit || debit || balance\n06/09/2023 || 1000||||1000\n06/09/2023 || 2000||||3000\n06/09/2023 ||  ||500||2500`;
+        const expectedStatement = `date || credit || debit || balance\n05/09/2023 || 1000||||1000\n05/09/2023 || 2000||||3000\n05/09/2023 ||  ||500||2500`;
         const statement = accountNum.printStatement()
         expect(statement).toBe(expectedStatement)
     });
