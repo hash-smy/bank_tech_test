@@ -8,7 +8,7 @@ class Transcation{
         return this.amount
     };
     getDate(){
-        return this.date.toLocaleString('en-GB')
+        return this.date.toLocaleString('en-GB').split(',')[0]
     };
     getBalanceAfterTranscation(){
         return this.balanceAfterTranscation

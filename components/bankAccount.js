@@ -7,14 +7,24 @@ class BankAccount{
         this.transcations = [];
     };
 
+    getAccountnum(){
+        if (this.accountNum !== 'number')
+            console.log('Invalid input');
+            return;
+    }
+
     deposit(amount){
-        if (amount >0 ){
+        if (amount >0){
         this.balance += amount;
         const transcation = new Transcation(amount, this.balance);
         this.transcations.push(transcation);
         console.log(`Deposited ${amount}. Balance : ${this.balance}`);
+        }
+        if (amount !== 'number'){
+            console.log("Invalid deposit input")
+            return;
         }else{
-        console.log("Invalid deposit amount");
+            console.log("Invalid deposit amount");
         }
     };
     withdraw(amount) {
@@ -48,7 +58,6 @@ class BankAccount{
             const debitStr = debit.toString();
             const balanceStr = balance.toString().padEnd(8);
             statement += `\n${date} || ${creditStr}||${debit}||${balance}`;
-            console.log(statement);
             }    
             return statement;
         }
