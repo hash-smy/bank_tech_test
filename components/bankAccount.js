@@ -8,9 +8,9 @@ class BankAccount{
     };
 
     getAccountnum(){
-        if (this.accountNum !== 'number')
-            console.log('Invalid input');
-            return;
+        if (typeof this.accountNum !== 'number')
+            return('Invalid input');
+        return this.accountNum;
     }
 
     deposit(amount){
@@ -18,13 +18,13 @@ class BankAccount{
         this.balance += amount;
         const transcation = new Transcation(amount, this.balance);
         this.transcations.push(transcation);
-        console.log(`Deposited ${amount}. Balance : ${this.balance}`);
+
         }
-        if (amount !== 'number'){
-            console.log("Invalid deposit input")
+        if (amount <0){
+            console.log("Invalid deposit amount")
             return;
         }else{
-            console.log("Invalid deposit amount");
+            console.log("Invalid deposit input");
         }
     };
     withdraw(amount) {
@@ -32,10 +32,14 @@ class BankAccount{
         this.balance -= amount;
         const transcation = new Transcation(-amount, this.balance);
         this.transcations.push(transcation);
-        }else{
-        console.log("Insufficient fund")
         }
-
+        if (amount > this.balance){
+            console.log("Insufficient funds");
+            return;
+        }else{
+            console.log("Invalid withdraw input");
+            return;
+        }
     };
 
     getBalance() {
