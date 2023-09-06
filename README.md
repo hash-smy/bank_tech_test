@@ -24,12 +24,12 @@ On 13-01-2023, a client makes a deposit of 2000.
 On 14-01-2023, a client makes a withdrawal of 500.
 When the client prints their bank statement, it should display the following:
 
-
+```
 date || credit || debit || balance
 14/01/2023 || || 500.00 || 2500.00
 13/01/2023 || 2000.00 || || 3000.00
 10/01/2023 || 1000.00 || || 1000.00
-
+```
 
 # Getting Started
 To get started with the Bank Tech Test, you can follow these steps:
@@ -38,6 +38,7 @@ Clone this repository to your local machine.
 
 Set up your development environment:
 
+```
 //Setup our environment to use node latest version
 $ nvm use node
 
@@ -54,7 +55,6 @@ $ npm install -g jest
 
 //Run our tests
 $ jest
-
-
+```
 
 
