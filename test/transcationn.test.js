@@ -3,8 +3,8 @@ const Transcation = require('../components/transcation')
 describe ('Transcation', ()=>{
     it('when create transcation with amount should update the balance ',() =>{
         const transaction= new Transcation(500, 500)
-        expect(transaction.getAmount()).toBe(500);
-        expect(transaction.getBalanceAfterTranscation()).toBe(500);
+        expect(transaction.getAmount()).toBe(500.00);
+        expect(transaction.getBalanceAfterTranscation()).toBe(500.00);
     })
     it('should return the formatted date as expected',() =>{
         jest.useFakeTimers();

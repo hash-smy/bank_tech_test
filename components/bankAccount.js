@@ -48,20 +48,21 @@ class BankAccount{
 
     printStatement(){
         let statement = 'date || credit || debit || balance';
-        for (const transcation of this.transcations){
+        const reversedTransactions = this.transcations.reverse();
+        for (const transcation of reversedTransactions){
             const date = transcation.getDate().toLocaleString('en-GB').split(',')[0];
-            let credit =" ";
+            let credit ="";
             let debit = "";
             if (transcation.getAmount() > 0){
-                credit = transcation.getAmount();
+                credit = transcation.getAmount().toFixed(2);
             }else{
-                debit = -transcation.getAmount();
+                debit = Math.abs(transcation.getAmount()).toFixed(2);
             }
-            const balance =transcation.getBalanceAfterTranscation();
+            const balance =transcation.getBalanceAfterTranscation().toFixed(2);
             const creditStr = credit.toString();
-            const debitStr = debit.toString();
-            const balanceStr = balance.toString().padEnd(8);
-            statement += `\n${date} || ${creditStr}||${debit}||${balance}`;
+            const debitStr = debit.toString()
+            const balanceStr = balance.toString();
+            statement += `\n${date} || ${creditStr}||${debitStr}||${balanceStr}`;
             }    
             return statement;
         }
