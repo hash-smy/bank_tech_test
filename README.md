@@ -31,7 +31,16 @@ date || credit || debit || balance
 10/01/2023 || 1000.00 || || 1000.00
 ```
 
-# Getting Started
+# Designing a solution
+I have use teh design recipe to match user expectation
+
+<img width="641" alt="DesignDiagram" src="https://github.com/hash-smy/bank_tech_test/assets/132000805/979a53d1-f57d-48b1-83db-0cd5cb9c961f">
+
+And designed my classes interact with each other in a sequence diagram
+
+<img width="513" alt="SequenceDiagram" src="https://github.com/hash-smy/bank_tech_test/assets/132000805/62e98e7d-28d2-40ce-ad9a-3e8ced4f56bd">
+
+# Getting Started with environment setup
 To get started with the Bank Tech Test, you can follow these steps:
 
 Clone this repository to your local machine.
@@ -47,14 +56,21 @@ $ npm init -y
 
 // Add the jest package to our project
 //(this will update package.json and package-lock.json)
-$ npm add jest
+$ npm install --save-dev jest
 
 // Also install jest "globally"
 // (this is so we can run the `jest` command)
 $ npm install -g jest
-
-//Run our tests
-$ jest
 ```
+# To run test use the following command :
+```
+jest
+```
+
+# This is the program running in the termianl
+<img width="518" alt="Screenshot 2023-09-07 at 13 31 47" src="https://github.com/hash-smy/bank_tech_test/assets/132000805/3c722930-6986-4520-83b6-3e01039c4eff">
+
+
+
 
 
