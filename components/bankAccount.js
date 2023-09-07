@@ -1,4 +1,4 @@
-const Transcation = require('./transcation.js')
+const Transcation = require('./transaction.js')
 
 class BankAccount{
     constructor(accountNum){
@@ -18,13 +18,16 @@ class BankAccount{
         this.balance += amount;
         const transcation = new Transcation(amount, this.balance);
         this.transcations.push(transcation);
+        console.log("Deposit sucess!");
+        return
 
         }
         if (amount <0){
             console.log("Invalid deposit amount")
             return;
         }else{
-            console.log("Invalid deposit input");
+            console.log("Invalid deposit input")
+            return;
         }
     };
     withdraw(amount) {
@@ -32,6 +35,8 @@ class BankAccount{
         this.balance -= amount;
         const transcation = new Transcation(-amount, this.balance);
         this.transcations.push(transcation);
+        console.log("Withdrawal success!");
+        return;
         }
         if (amount > this.balance){
             console.log("Insufficient funds");

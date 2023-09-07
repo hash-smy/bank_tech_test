@@ -1,4 +1,4 @@
-const Transcation = require('../components/transcation')
+const Transcation = require('../components/transaction')
 
 describe ('Transcation', ()=>{
     it('when create transcation with amount should update the balance ',() =>{
