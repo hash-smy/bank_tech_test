@@ -18,7 +18,7 @@ class BankAccount{
         this.balance += amount;
         const transcation = new Transcation(amount, this.balance);
         this.transcations.push(transcation);
-        console.log("Deposit sucess!");
+        console.log("Deposit successful!");
         return
 
         }
@@ -35,7 +35,7 @@ class BankAccount{
         this.balance -= amount;
         const transcation = new Transcation(-amount, this.balance);
         this.transcations.push(transcation);
-        console.log("Withdrawal success!");
+        console.log("Withdrawal successful!");
         return;
         }
         if (amount > this.balance){
